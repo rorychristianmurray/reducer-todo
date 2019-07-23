@@ -27,9 +27,9 @@ export function reducer(state, action) {
     case TOGGLE_TODO:
       console.log("TOGGLE_TODO action.payload", action.payload);
       return action.payload;
-      case: CLEAR_TODO:
-      return state
+    case CLEAR_TODO:
+      return state.filter(todo => !todo.completed);
     default:
-      return state.filter(todo => !todo.completed)
+      return state;
   }
 }

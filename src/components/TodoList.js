@@ -3,7 +3,8 @@ import {
   initialState,
   reducer,
   ADD_TODO,
-  TOGGLE_TODO
+  TOGGLE_TODO,
+  CLEAR_TODO
 } from "../reducers/Reducer";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
@@ -38,13 +39,17 @@ const TodoList = () => {
     // console.log("toggleTodo todos", todos);
   };
 
+  const clearTodo = () => {
+    dispatch({ type: CLEAR_TODO });
+  };
+
   return (
     <div className="todo-list">
       <div>{state.item}</div>
       {state.map(todo => (
         <Todo todo={todo} key={todo.id} toggleTodo={toggleTodo} />
       ))}
-      <TodoForm addTodo={addTodo} />
+      <TodoForm addTodo={addTodo} clearTodo={clearTodo} />
     </div>
   );
 };

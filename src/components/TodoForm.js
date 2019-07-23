@@ -13,12 +13,10 @@ const TodoForm = props => {
     setTodo("");
   };
 
-  //   clearCompleted = (event) => {
-  //       event.preventDefault();
-  //       this.setState({
-  //           newTask : this.state.tasks.filter(task => task.completed)
-  //       })
-  //   };
+  const clearTodo = event => {
+    event.preventDefault();
+    props.clearTodo();
+  };
 
   return (
     <form className="todo-form" onSubmit={addTodo}>
@@ -30,9 +28,9 @@ const TodoForm = props => {
         name="item"
       />
       <button className="btn">Add Task</button>
-      {/* <button className="btn" onClick={this.props.clearCompleted}>
-          Clear completed
-        </button> */}
+      <button className="btn" onClick={clearTodo}>
+        Clear Completed
+      </button>
     </form>
   );
 };
