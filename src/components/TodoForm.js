@@ -19,6 +19,7 @@ const TodoForm = props => {
   const addTodo = event => {
     event.preventDefault();
     props.addTodo(newTodo);
+    setTodo("");
   };
 
   //   addTask = event => {

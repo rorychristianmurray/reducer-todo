@@ -22,8 +22,10 @@ export function reducer(state, action) {
         id: Date.now()
       };
       return [...state, newTodo];
-    // case "TOGGLE_TODO":
-    //   return { count: state.count + 1 };
+    case "TOGGLE_TODO":
+      return {
+        ...state
+      };
     // case "EDIT_TODO":
     //   return { count: state.count + 1 };
     // case "DELETE_TODO":
