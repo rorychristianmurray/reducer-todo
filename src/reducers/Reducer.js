@@ -11,10 +11,17 @@ export const initialState = [
   }
 ];
 
+export const ADD_TODO = "ADD_TODO";
+
 export function reducer(state, action) {
   switch (action.type) {
-    // case "ADD_TODO":
-    //   return { count: state.count + 1 };
+    case "ADD_TODO":
+      const newTodo = {
+        item: action.payload,
+        completed: false,
+        id: Date.now()
+      };
+      return [...state, newTodo];
     // case "TOGGLE_TODO":
     //   return { count: state.count + 1 };
     // case "EDIT_TODO":
