@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 
 const TodoForm = props => {
-  console.log("TodoForm props", props);
-
   const [newTodo, setTodo] = useState("");
 
-  console.log("TodoForm newTodo", newTodo);
-
   const handleChanges = event => {
-    console.log(
-      "TodoForm handleChanges event.target.value",
-      event.target.value
-    );
-
     setTodo(event.target.value);
   };
 
@@ -21,12 +12,6 @@ const TodoForm = props => {
     props.addTodo(newTodo);
     setTodo("");
   };
-
-  //   addTask = event => {
-  //       event.preventDefault();
-  //       this.props.addTask(this.state.taskName)
-  //       this.setState({taskName: ""})
-  //   }
 
   //   clearCompleted = (event) => {
   //       event.preventDefault();

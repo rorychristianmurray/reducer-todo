@@ -12,6 +12,7 @@ export const initialState = [
 ];
 
 export const ADD_TODO = "ADD_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
 
 export function reducer(state, action) {
   switch (action.type) {
@@ -23,15 +24,8 @@ export function reducer(state, action) {
       };
       return [...state, newTodo];
     case "TOGGLE_TODO":
-      return {
-        ...state
-      };
-    // case "EDIT_TODO":
-    //   return { count: state.count + 1 };
-    // case "DELETE_TODO":
-    //   return { count: state.count + 1 };
-    // case "CLEAR_TODO":
-    //   return { count: state.count + 1 };
+      console.log("TOGGLE_TODO action.payload", action.payload);
+      return action.payload;
     default:
       return state;
   }
